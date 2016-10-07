@@ -2,7 +2,7 @@
 
 TMP_ROOTFS="/tmp/rootfs"
 
-function install_ui()
+function install_unity_desktop()
 {
     sudo apt install -y --no-install-recommends ubuntu-desktop
     # fixes some lightdm errors
@@ -17,6 +17,11 @@ function install_ui()
     sudo cp -r $TMP_ROOTFS rootfs/etc/lightdm/lightdm.conf.d/ /etc/lightdm/
     # fixes locales
     sudo cp $TMP_ROOTFS rootfs/etc/default/locale /etc/default/
+}
+
+function install_xfce_desktop()
+{
+    sudo apt install -y --no-install-recommends xubuntu-desktop
 }
 
 function install_core()

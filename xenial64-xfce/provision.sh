@@ -8,8 +8,9 @@ function main()
     # an update is automatically triggered at boot in Xenial
     # this is an issue because it locks dpkg
     sudo killall -KILL apt.systemd.daily
-    install_ui
+    sudo apt update
     install_core
+    install_xfce_desktop
     install_additional
 }
 
