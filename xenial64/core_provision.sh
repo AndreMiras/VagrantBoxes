@@ -4,7 +4,6 @@ TMP_ROOTFS="/tmp/rootfs"
 
 function install_ui()
 {
-    sudo apt update
     sudo apt install -y --no-install-recommends ubuntu-desktop
     # fixes some lightdm errors
     sudo apt install -y libpam-kwallet5 libpam-kwallet4 libpam-gnome-keyring
@@ -22,7 +21,6 @@ function install_ui()
 
 function install_core()
 {
-    sudo apt update
     sudo apt install -y git git-flow
 }
 
