@@ -2,6 +2,11 @@
 
 TMP_ROOTFS="/tmp/rootfs"
 
+function install_ui_requirements()
+{
+    sudo apt install -y --no-install-recommends linux-generic
+}
+
 function install_unity_desktop()
 {
     sudo apt install -y --no-install-recommends ubuntu-desktop
@@ -21,6 +26,7 @@ function install_unity_desktop()
 
 function install_xfce_desktop()
 {
+    install_ui_requirements
     sudo apt install -y --no-install-recommends xubuntu-desktop
 }
 
