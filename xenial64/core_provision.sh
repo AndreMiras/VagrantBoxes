@@ -28,6 +28,7 @@ function install_xfce_desktop()
 {
     install_ui_requirements
     sudo apt install -y --no-install-recommends xubuntu-desktop
+    sudo apt install -y --no-install-recommends xfce4-terminal
 }
 
 function install_core()
