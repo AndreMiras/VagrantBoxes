@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 TMP_ROOTFS="/tmp/rootfs"
+DEFAULT_USER="ubuntu"
 
 function install_ui_requirements()
 {
@@ -19,9 +20,9 @@ function install_unity_desktop()
     sudo apt install -y gnome-terminal
     sudo apt install -y indicator-session
     # enables auto-login
-    sudo cp -r $TMP_ROOTFS rootfs/etc/lightdm/lightdm.conf.d/ /etc/lightdm/
+    sudo cp -r $TMP_ROOTFS rootfs/etc/lightdm/lightdm.conf.d/ /etc/lightdm/ # FIXME: TMP_ROOTFS and rootfs
     # fixes locales
-    sudo cp $TMP_ROOTFS rootfs/etc/default/locale /etc/default/
+    sudo cp $TMP_ROOTFS rootfs/etc/default/locale /etc/default/ # FIXME: same thing
 }
 
 function install_xfce_desktop()
@@ -39,7 +40,7 @@ function install_core()
 function install_vim()
 {
     sudo apt install -y vim
-    cp $TMP_ROOTFS/home/vagrant/.vimrc ~/
+    cp $TMP_ROOTFS/home/$DEFAULT_USER/.vimrc /home/$DEFAULT_USER/
 }
 
 function install_eclipse_neon_46()

@@ -10,6 +10,7 @@ function main()
     sudo killall -KILL apt.systemd.daily
     sudo apt update
     install_core
+    install_vim
     install_additional
 }
 
