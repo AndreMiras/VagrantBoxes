@@ -86,19 +86,7 @@ Vagrant.configure(2) do |config|
   SHELL
 
   # copy directories recursively
-  require 'pathname'
-  root_fs = '../xenial64/rootfs'
-  r = Pathname.new root_fs
-  Dir.glob(File.join(root_fs, File.join("**","*"))) do |f|
-    if !File.directory?(f) then
-      s = Pathname.new f
-      t = s.relative_path_from r
-      config.vm.provision "file" do |fp|
-        fp.source = s.to_s
-        fp.destination = "/tmp/rootfs/" + t.to_s
-      end
-    end
-  end
+  config.vm.provision :file, source: '../xenial64/rootfs', destination: "/tmp/"
 
   config.vm.provision :file do |file|
     file.source = "../xenial64/core_provision.sh"
