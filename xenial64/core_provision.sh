@@ -41,6 +41,8 @@ function install_vim()
 {
     sudo apt install -y vim
     cp $TMP_ROOTFS/home/$DEFAULT_USER/.vimrc /home/$DEFAULT_USER/
+    # sets vim as default editor
+    sudo update-alternatives --set editor /usr/bin/vim.basic
 }
 
 function install_eclipse_neon_46()
