@@ -8,3 +8,9 @@ Simply copy the directory to start a new project based on this one.
 
 We do not copy `rootfs/` directory and `core_provision.sh` file as they are
 supposed to be shared across VM based on this master VM.
+
+## What next
+Update timezone:
+```
+sudo dpkg-reconfigure tzdata
+```
